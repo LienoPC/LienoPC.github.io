@@ -10,6 +10,110 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		
+		<!-- Night Theme Overrides -->
+		<style>
+			/* Main Body & Text */
+			body, input, select, textarea {
+				background-color: #121212 !important;
+				color: #b3b3b3 !important;
+			}
+			#main {
+				background-color: #121212 !important;
+			}
+			h1, h2, h3, h4, h5, h6, strong, b {
+				color: #ffffff !important;
+			}
+			p {
+				color: #b3b3b3 !important;
+			}
+			a {
+				color: #4da6ff !important;
+				border-bottom-color: rgba(77, 166, 255, 0.5) !important;
+			}
+			a:hover {
+				color: #80c1ff !important;
+				border-bottom-color: transparent !important;
+			}
+
+			/* Sidebar / Header */
+			#header {
+				background-color: #1a1a1a !important;
+			}
+			#header h1 a {
+				color: #ffffff !important;
+			}
+			#header p {
+				color: #a0a0a0 !important;
+			}
+			#nav ul li a {
+				color: #a0a0a0 !important;
+			}
+			#nav ul li a.active, #nav ul li a:hover {
+				color: #ffffff !important;
+			}
+
+			/* Borders and Dividers */
+			hr {
+				border-bottom-color: #333333 !important;
+				border-top-color: #333333 !important;
+			}
+			#wrapper > #main > section {
+				border-top-color: #2a2a2a !important;
+			}
+
+			/* Lists & Icons */
+			ul.feature-icons li:before {
+				background-color: #2a2a2a !important; /* Darkened the circle background */
+				color: #4da6ff !important; /* Blue icon */
+			}
+			ul.actions li a {
+				border-bottom: none !important;
+			}
+
+			/* Buttons */
+			input[type="submit"], input[type="reset"], input[type="button"], button, .button {
+				background-color: transparent !important;
+				box-shadow: inset 0 0 0 2px #444444 !important;
+				color: #ffffff !important;
+			}
+			input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover, .button:hover {
+				background-color: #2a2a2a !important;
+				box-shadow: inset 0 0 0 2px #4da6ff !important;
+				color: #4da6ff !important;
+			}
+			input[type="submit"].primary, button.primary, .button.primary {
+				background-color: #4da6ff !important;
+				box-shadow: none !important;
+				color: #121212 !important;
+			}
+			input[type="submit"].primary:hover, button.primary:hover, .button.primary:hover {
+				background-color: #80c1ff !important;
+				color: #121212 !important;
+			}
+
+			/* Form Inputs */
+			input[type="text"], input[type="password"], input[type="email"], select, textarea {
+				background: #1e1e1e !important;
+				border-color: #333333 !important;
+				color: #ffffff !important;
+			}
+			input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, select:focus, textarea:focus {
+				border-color: #4da6ff !important;
+				box-shadow: 0 0 0 1px #4da6ff !important;
+			}
+
+			/* Footer */
+			#footer .copyright {
+				color: #666666 !important;
+			}
+			#footer .copyright a {
+				color: #888888 !important;
+			}
+			#footer .copyright a:hover {
+				color: #ffffff !important;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -55,7 +159,8 @@
 										<h2>Hi there, I'm Alberto!</h2>
 										<p>Humble Computer Engineer and Game Developer.</p>
 									</header>
-									<p>Welcome to my portfolio. I am passionate about creating immersive interactive experiences and solving complex technical challenges. From crafting games in Unity and Unreal Engine 5 to diving deep into system programming and computer graphics using OpenGL and C++, I love every aspect of software and game development. My background also spans machine learning, web development, and 3D animation, allowing me to approach projects with a versatile and multidisciplinary mindset.</p>
+									<p>This is my portfolio, simple as that. Mostly videogames projects with a bit of tech verticalities.
+										What mainly interests me is to explore engineering techniques, patterns and optimization applied to games.</p>
 								</div>
 							</section>
 
@@ -65,11 +170,10 @@
 									<h3>Things I Can Do</h3>
 									<p>With a strong foundation in computer engineering, I've developed a diverse skill set ranging from low-level system programming to high-level game design and AI model integration.</p>
 									<ul class="feature-icons">
-										<li class="icon solid fa-gamepad">Unity & Unreal Engine 5</li>
-										<li class="icon solid fa-code">C++, C#, C, JavaScript</li>
+										<li class="icon solid fa-gamepad">Unreal Engine & Unity</li>
+										<li class="icon solid fa-code">C++ Evangelist (but also C#, Python, Type/JavaScript)</li>
 										<li class="icon solid fa-cube">OpenGL & Computer Graphics</li>
-										<li class="icon solid fa-robot">Machine Learning & AI (CNN, YOLO)</li>
-										<li class="icon solid fa-laptop-code">Web Development (React, JS)</li>
+										<li class="icon solid fa-robot">Machine Learning & AI (Hands on CNNs)</li>
 										<li class="icon solid fa-video">3D Modeling & Animation (Blender)</li>
 									</ul>
 								</div>
@@ -81,71 +185,81 @@
 									<h3>Portfolio & Accomplishments</h3>
 									<p>Below is a selection of my recent work across different domains, ranging from game development to machine learning and 3D animation.</p>
 									
-									<h4 class="major">🎮 Game Development Projects (Unity)</h4>
-									<div class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic01.jpg" alt="Mecha-Ball Project" /></a>
-											<div class="inner">
-												<h4>Project Mecha-Ball</h4>
-												<p>Isometric puzzle game featuring a small robot. Help its AI train and become the best problem-solving system. Developed in a 6-person team as part of the "Game Design" course. Worked specifically on:</p>
-												<ul>
-													<li>Basic concept and design</li>
-													<li>High-level player logic, player ball controller and multiple control module system</li>
-													<li>Player animation system, procedural animation and its interaction with physics</li>
-													<li>Player physics system</li>
-													<li>Game loading management and game architecture; game states logic</li>
-													<li>Game design and level design (level 4)</li>
-													<li>Integration of FMOD Studio and audio engineering of the entire project</li>
-												</ul>
-												<ul class="actions">
-													<li><a href="#" class="button small">Itch.io Page</a></li>
-												</ul>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic02.jpg" alt="True Vision Project" /></a>
-											<div class="inner">
-												<h4>True Vision | GGJ 2026</h4>
-												<p>Project developed during the 2026 Global Game Jam in a team of 5 people. Worked as programmer, specifically on:</p>
-												<ul>
-													<li>Attacks, hitbox and enemy-interaction mechanics</li>
-													<li>Hook mechanic with interaction with walls and object dragging</li>
-													<li>In-game buttons and plates with trigger logic associated</li>
-													<li>Game architecture, audio system, level logic</li>
-													<li>Base concept and demo level</li>
-												</ul>
-												<ul class="actions">
-													<li><a href="#" class="button small">Itch.io Page</a></li>
-													<li><a href="#" class="button alt small">Trailer</a></li>
-												</ul>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic03.jpg" alt="The Plague in Milan Project" /></a>
-											<div class="inner">
-												<h4>The Plague in Milan</h4>
-												<p>First-person educational game developed as part of a team (4-person) for the “Virtual Reality” course (Dialogue and text are in Italian).</p>
-												<ul class="actions">
-													<li><a href="#" class="button small">Itch.io Page</a></li>
-												</ul>
-											</div>
-										</article>
-									</div>
-
-									<div style="margin-top: 3em;">
-										<h4 class="major">Unreal Engine 5 Projects</h4>
-										<p>Self-driven projects developed for educational and skill-building purposes, aimed at mastering Unreal Engine 5 workflows and systems:</p>
-										<ul>
-											<li>
-												<strong>Aura: Top-Down RPG (WIP)</strong> - <a href="#">GitHub Repository</a><br />
-												Implementing Gameplay Ability System to create scalable character abilities and effects in a top-down RPG game. Part of Stephen Ulibarri "Unreal Engine 5 - Gameplay Ability System" intermediate course.
-											</li>
-											<li>
-												<strong>Slash: Soulslike Demo</strong> - <a href="#">GitHub Repository</a><br />
-												Prototyped core combat mechanics inspired by Soulslike games, focusing on animation montages, hit detection, and simple enemy AI behavior, along with all basic tools provided by the engine. Project results of Stephen Ulibarri "Unreal Engine 5 C++ The Ultimate Game Developer Course".
-											</li>
+									<!-- Unreal Engine 5 Projects -->
+									<h4 class="major" style="margin-top: 3em;">🎮 Unreal Engine 5 Projects</h4>
+									<p style="margin-bottom: 3em;">Self-driven projects developed for educational and skill-building purposes, aimed at mastering Unreal Engine 5 workflows and systems:</p>
+									
+									<article style="margin-bottom: 4em;">
+										<div style="text-align: center; margin-bottom: 1.5em;">
+											<a href="https://github.com/LienoPC/Aura-GameplayAbilitySystem.git" class="image"><img src="images/pic01.jpg" alt="Aura Top-Down RPG" style="max-width: 100%; height: auto; border-radius: 4px;" /></a>
+										</div>
+										<h4>Aura: Top-Down RPG (WIP)</h4>
+										<p>Exploiting UE Gameplay Ability System to create scalable character abilities and effects in a top-down RPG game. Everything in the project logic is self-developed.
+											 Part of Stephen Ulibarri "Unreal Engine 5 - Gameplay Ability System" intermediate 104 hours course.</p>
+										<ul class="actions">
+											<li><a href="https://github.com/LienoPC/Aura-GameplayAbilitySystem.git" class="button small">GitHub Repository</a></li>
 										</ul>
+									</article>
 
+									<article style="margin-bottom: 4em;">
+										<div style="text-align: center; margin-bottom: 1.5em;">
+											<a href="https://github.com/LienoPC/UE5-StartingCourse-SlashProject.git" class="image"><img src="images/pic02.jpg" alt="Slash Soulslike Demo" style="max-width: 100%; height: auto; border-radius: 4px;" /></a>
+										</div>
+										<h4>Slash: Soulslike Demo</h4>
+										<p>Prototyped core combat mechanics inspired by Soulslike games, focusing on animation montages, hit detection, and simple enemy AI behavior, along with all basic tools provided by the engine. Project results of Stephen Ulibarri "Unreal Engine 5 C++ The Ultimate Game Developer Course" 58 hours course.</p>
+										<ul class="actions">
+											<li><a href="https://github.com/LienoPC/UE5-StartingCourse-SlashProject.git" class="button small">GitHub Repository</a></li>
+										</ul>
+									</article>
+
+									<hr />
+
+									<!-- Unity Projects -->
+									<h4 class="major">🎮 Unity Projects</h4>
+									
+									<article style="margin-bottom: 4em;">
+										<div style="text-align: center; margin-bottom: 1.5em;">
+											<a href="#" class="image"><img src="images/pic01.jpg" alt="Project Mecha-Ball" style="max-width: 100%; height: auto; border-radius: 4px;" /></a>
+										</div>
+										<h4>Project Mecha-Ball</h4>
+										<p>Isometric puzzle game featuring a small robot. Help its AI train and become the best problem-solving system. Developed in a 6-person team as part of the "Game Design" course. Worked specifically on:</p>
+										<ul>
+											<li>Basic concept and design</li>
+											<li>High-level player logic, player ball controller and multiple control module system</li>
+											<li>Player animation system, procedural animation and its interaction with physics</li>
+											<li>Player physics system</li>
+											<li>Game loading management and game architecture; game states logic</li>
+											<li>Game design and level design (level 4)</li>
+											<li>Integration of FMOD Studio and audio engineering of the entire project</li>
+										</ul>
+										<ul class="actions">
+											<li><a href="#" class="button small">Itch.io Page</a></li>
+										</ul>
+									</article>
+
+									<article style="margin-bottom: 4em;">
+										<div style="text-align: center; margin-bottom: 1.5em;">
+											<a href="#" class="image"><img src="images/pic02.jpg" alt="True Vision GGJ 2026" style="max-width: 100%; height: auto; border-radius: 4px;" /></a>
+										</div>
+										<h4>True Vision | GGJ 2026</h4>
+										<p>Project developed during the 2026 Global Game Jam in a team of 5 people. Worked as programmer, specifically on:</p>
+										<ul>
+											<li>Attacks, hitbox and enemy-interaction mechanics</li>
+											<li>Hook mechanic with interaction with walls and object dragging</li>
+											<li>In-game buttons and plates with trigger logic associated</li>
+											<li>Game architecture, audio system, level logic</li>
+											<li>Base concept and demo level</li>
+										</ul>
+										<ul class="actions">
+											<li><a href="#" class="button small">Itch.io Page</a></li>
+											<li><a href="#" class="button alt small">Trailer</a></li>
+										</ul>
+									</article>
+
+									<hr />
+
+									<!-- Other Categories -->
+									<div style="margin-top: 3em;">
 										<h4 class="major">OpenGL C++</h4>
 										<ul>
 											<li>
@@ -222,9 +336,6 @@
 									</form>
 								</div>
 							</section>
-
-						<!-- Five -->
-						<!-- (Elements block intentionally left commented as per original template) -->
 
 					</div>
 
