@@ -11,7 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		
-		<!-- Night Theme & Custom Overrides -->
+		<!-- Night Theme & Slideshow Overrides -->
 		<style>
 			/* Main Body & Text */
 			body, input, select, textarea {
@@ -51,13 +51,6 @@
 			}
 			#nav ul li a.active, #nav ul li a:hover {
 				color: #ffffff !important;
-			}
-
-			/* Banner Sizing */
-			#one .image.main img {
-				max-height: 300px !important;
-				object-fit: cover !important;
-				object-position: center !important;
 			}
 
 			/* Borders and Dividers */
@@ -130,7 +123,7 @@
 				text-align: center;
 				overflow: hidden;
 				border-radius: 4px;
-				background-color: #000; 
+				background-color: #000; /* Dark background behind images */
 			}
 			.slide {
 				display: none;
@@ -179,334 +172,6 @@
 				from {opacity: .4} 
 				to {opacity: 1}
 			}
-
-			/* Portfolio visual system */
-			:root {
-				--ink: #101820;
-				--ink-soft: #172630;
-				--paper: #f3f0e8;
-				--paper-deep: #e8e4da;
-				--text: #26343b;
-				--muted: #64747a;
-				--cyan: #35d0c2;
-				--coral: #ff826d;
-				--line: rgba(38, 52, 59, 0.16);
-			}
-
-			html {
-				scroll-behavior: smooth;
-			}
-
-			body, input, select, textarea {
-				background-color: var(--paper) !important;
-				color: var(--text) !important;
-				font-family: "Lato", sans-serif;
-				letter-spacing: 0.01em;
-			}
-
-			body {
-				background: var(--paper) !important;
-			}
-
-			#wrapper, #main {
-				background: var(--paper) !important;
-			}
-
-			#main > section {
-				border-top: 1px solid var(--line) !important;
-				position: relative;
-			}
-
-			#main > section:nth-child(even) {
-				background: var(--paper-deep) !important;
-			}
-
-			#main > section > .container {
-				max-width: 68em;
-				padding: 6.5em 3em 5.5em;
-			}
-
-			h1, h2, h3, h4, h5, h6, strong, b {
-				color: var(--ink) !important;
-				letter-spacing: -0.025em;
-			}
-
-			h2 {
-				font-size: clamp(2em, 4vw, 3.4em);
-				line-height: 1.08;
-			}
-
-			h3 {
-				font-size: 2em;
-				line-height: 1.15;
-			}
-
-			h4 {
-				font-size: 1.22em;
-				line-height: 1.3;
-			}
-
-			h5 {
-				font-size: 1.25em;
-				line-height: 1.3;
-			}
-
-			p, li {
-				color: var(--text) !important;
-			}
-
-			a {
-				color: #087f83 !important;
-				border-bottom-color: rgba(8, 127, 131, 0.35) !important;
-			}
-
-			a:hover {
-				color: #e75e51 !important;
-			}
-
-			.major {
-				position: relative;
-			}
-
-			header.major {
-				border-left: 4px solid var(--coral);
-				padding-left: 1.4em;
-			}
-
-			header.major p {
-				color: var(--muted) !important;
-				font-size: 1.15em;
-				margin-top: 0.65em;
-			}
-
-			#one .image.main {
-				height: clamp(13em, 22vw, 19em);
-				margin: 0;
-				overflow: hidden;
-				position: relative;
-			}
-
-			#one .image.main:after {
-				background: linear-gradient(90deg, rgba(16, 24, 32, 0.5), transparent 65%);
-				content: "";
-				inset: 0;
-				pointer-events: none;
-				position: absolute;
-			}
-
-			#one .image.main img {
-				height: 100%;
-				max-height: none !important;
-				object-fit: cover !important;
-				object-position: center;
-				width: 100%;
-			}
-
-			#two .container > p, #three .container > p, #four .container > p {
-				color: var(--muted) !important;
-				max-width: 48em;
-			}
-
-			ul.feature-icons {
-				display: grid;
-				gap: 0.8em;
-				grid-auto-rows: 8.5em;
-				grid-template-columns: repeat(2, minmax(0, 1fr));
-				margin-top: 3em;
-			}
-
-			ul.feature-icons li {
-				align-items: center;
-				background: rgba(255, 255, 255, 0.62);
-				border: 1px solid rgba(38, 52, 59, 0.12);
-				display: flex;
-				height: 100%;
-				margin: 0 !important;
-				min-height: 6.25em;
-				padding: 1.25em 1.35em 1.25em 4.55em;
-				width: auto;
-			}
-
-			ul.feature-icons li:before {
-				background: var(--cyan) !important;
-				box-shadow: 0 0 0 5px rgba(53, 208, 194, 0.14);
-				color: var(--ink) !important;
-				left: 1em;
-				top: 50%;
-				transform: translateY(-50%);
-			}
-
-			#three h3.major, #three h4.major {
-				border-bottom: 1px solid var(--line);
-				color: var(--ink) !important;
-				padding-bottom: 0.75em;
-			}
-
-			#three article {
-				background: rgba(255, 255, 255, 0.5);
-				border: 1px solid rgba(38, 52, 59, 0.1);
-				box-shadow: 0 1em 2.5em rgba(16, 24, 32, 0.06);
-				padding: 2em;
-			}
-
-			#three li.project-card {
-				background: rgba(255, 255, 255, 0.5);
-				border: 1px solid rgba(38, 52, 59, 0.1);
-				box-shadow: 0 1em 2.5em rgba(16, 24, 32, 0.06);
-				list-style: none;
-				margin: 0 0 4em -0.5em;
-				padding: 2em;
-			}
-
-			#three article h5, #three article h4 {
-				color: var(--ink) !important;
-			}
-
-			.slideshow-container {
-				background: var(--ink) !important;
-				border: 1px solid rgba(16, 24, 32, 0.22);
-				box-shadow: 0 0.8em 1.8em rgba(16, 24, 32, 0.16);
-				margin: 0 0 2em;
-			}
-
-			.slide img {
-				max-height: 31em;
-				object-fit: contain;
-				width: 100%;
-			}
-
-			.slideshow-container .prev, .slideshow-container .next {
-				background: rgba(16, 24, 32, 0.72);
-				color: var(--cyan) !important;
-				padding: 0.8em 0.95em;
-			}
-
-			.slideshow-container .prev:hover, .slideshow-container .next:hover {
-				background: var(--coral);
-				color: var(--ink) !important;
-			}
-
-			.dragon-gallery {
-				margin-top: 2em;
-			}
-
-			.dragon-gallery .slide img {
-				background: var(--ink);
-				max-height: 31em;
-				object-fit: contain;
-				padding: 0.35em;
-				width: 100%;
-			}
-
-			.button, input[type="submit"], input[type="reset"], input[type="button"], button {
-				border-radius: 0 !important;
-				font-size: 0.72em !important;
-				font-weight: 700;
-				letter-spacing: 0.08em;
-				text-transform: uppercase;
-			}
-
-			.button, input[type="submit"].primary {
-				background: var(--ink) !important;
-				box-shadow: none !important;
-				color: #ffffff !important;
-			}
-
-			.button:hover, input[type="submit"].primary:hover {
-				background: var(--coral) !important;
-				color: var(--ink) !important;
-			}
-
-			#header {
-				background: var(--ink) !important;
-				box-shadow: -1em 0 3em rgba(16, 24, 32, 0.08);
-				width: 20em;
-			}
-
-			#header > header {
-				padding: 3.5em 2.5em 2em;
-			}
-
-			#header > header .avatar {
-				border: 3px solid var(--cyan);
-				box-shadow: 0 0 0 8px rgba(53, 208, 194, 0.1);
-				width: 8.5em;
-			}
-
-			#header h1 a, #header h2, #header h3, #header h4, #header h5, #header h6 {
-				color: #ffffff !important;
-			}
-
-			#header > header p, #header > footer .icons li a {
-				color: #9cb1b6 !important;
-			}
-
-			#header > nav ul li {
-				border-top-color: rgba(255, 255, 255, 0.1);
-			}
-
-			#header > nav ul li a {
-				color: #9cb1b6 !important;
-				font-size: 0.78em;
-				letter-spacing: 0.12em;
-				text-transform: uppercase;
-			}
-
-			#header > nav ul li a.active, #header > nav ul li a:hover {
-				background: var(--cyan) !important;
-				color: var(--ink) !important;
-			}
-
-			#footer {
-				background: var(--ink) !important;
-				color: #84969c !important;
-			}
-
-			#footer .copyright, #footer .copyright a {
-				color: #84969c !important;
-			}
-
-			input[type="text"], input[type="password"], input[type="email"], select, textarea {
-				background: rgba(255, 255, 255, 0.65) !important;
-				border: 1px solid var(--line) !important;
-				color: var(--text) !important;
-			}
-
-			input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, select:focus, textarea:focus {
-				border-color: var(--cyan) !important;
-				box-shadow: 0 0 0 1px var(--cyan) !important;
-			}
-
-			@media screen and (max-width: 736px) {
-				#header {
-					width: 17em;
-				}
-
-				#main > section > .container {
-					padding: 4em 1.5em 3.5em;
-				}
-
-				ul.feature-icons {
-					grid-auto-rows: 8.5em;
-					grid-template-columns: 1fr;
-				}
-
-				ul.feature-icons li {
-					min-height: 5.5em;
-				}
-
-				#three article {
-					padding: 1.25em;
-				}
-
-				.dragon-gallery .slide img {
-					max-height: 24em;
-				}
-
-				#one .image.main {
-					height: 11em;
-				}
-			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -529,9 +194,10 @@
 				</nav>
 				<footer>
 					<ul class="icons">
-						<li><a href="www.linkedin.com/in/alberto-cagnazzo-038202338" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/LienoPC" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="albertocag9@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
 				</footer>
 			</section>
@@ -545,7 +211,7 @@
 						<!-- One -->
 							<section id="one">
 								<div class="image main" data-position="center">
-									<img src="images/Banne.png" alt="Banner Image" />
+									<img src="images/banner.jpg" alt="Banner Image" />
 								</div>
 								<div class="container">
 									<header class="major">
@@ -564,7 +230,7 @@
 									<p>With a strong foundation in computer engineering, I've developed a diverse skill set ranging from low-level system programming to high-level game design and AI model integration.</p>
 									<ul class="feature-icons">
 										<li class="icon solid fa-gamepad">Unreal Engine & Unity</li>
-										<li class="icon solid fa-code">C++ Enthusiast (I also manage well C#, Python, Type/JavaScript)</li>
+										<li class="icon solid fa-code">C++ Evangelist (but also C#, Python, Type/JavaScript)</li>
 										<li class="icon solid fa-cube">OpenGL & Computer Graphics</li>
 										<li class="icon solid fa-robot">Machine Learning & AI (Hands on CNNs)</li>
 										<li class="icon solid fa-video">3D Modeling & Animation (Blender)</li>
@@ -579,51 +245,45 @@
 									<p>Below is a selection of my recent work across different domains, ranging from game development to machine learning and 3D animation.</p>
 									
 									<!-- Unreal Engine 5 Projects -->
-									<h3 class="major" style="margin-top: 3em;">🎮 Unreal Engine</h3>
-
-									<h4 class="major" style="margin-top: 3em;">VR/Engine Programmer @ GRANSTUDIO - <a href="https://www.digiphy.eu">Digiphy Website</a></h4> <br />
-									Working on DigiPHY system, an adaptive mixed-reality seating buck in support of automotive design process.<br/>
-									Gained expertise on:
-
-									
-									<ul>
-										<li>Unreal Engine Framework extension and customization</li>
-										<li>Engine/Editor-Programming level features for in-engine custom functionalities</li>
-										<li>Engine and Editor level maps, lifetime, UObjects and Asset Management.</li>
-										<li>Networking with custom server systems, collaboration and multiplayer.</li>
-									</ul>
-									<h4 class="major" style="margin-top: 3em;">Personal Projects</h4>
-
+									<h4 class="major" style="margin-top: 3em;">🎮 Unreal Engine 5 Projects</h4>
 									<p style="margin-bottom: 3em;">Self-driven projects developed for educational and skill-building purposes, aimed at mastering Unreal Engine 5 workflows and systems:</p>
 									
 									<article style="margin-bottom: 4em;">
 										<!-- Aura Slideshow -->
-										<h5>Aura: Top-Down RPG (WIP)</h5>
-
 										<div class="slideshow-container">
 											<div class="slide fade">
-												<img src="images/Aura_1_2.png" alt="Aura Screenshot 2" />
+												<img src="images/pic01.jpg" alt="Aura Screenshot 1" />
 											</div>
 											<div class="slide fade">
-												<img src="images/Aura_1_1.png" alt="Aura Screenshot 1" />
+												<img src="images/pic02.jpg" alt="Aura Screenshot 2" />
 											</div>
 											<div class="slide fade">
-												<img src="images/Aura_1_3.png" alt="Aura Screenshot 3" />
+												<img src="images/pic03.jpg" alt="Aura Screenshot 3" />
 											</div>
 											<a class="prev" onclick="moveSlide(this, -1)">&#10094;</a>
 											<a class="next" onclick="moveSlide(this, 1)">&#10095;</a>
 										</div>
+										<h4>Aura: Top-Down RPG (WIP)</h4>
 										<p>Exploiting UE Gameplay Ability System to create scalable character abilities and effects in a top-down RPG game. Everything in the project logic is self-developed.
-											 Part of Stephen Ulibarri "Unreal Engine 5 - Gameplay Ability System" intermediate 104 hours course. More technical info in repo README. </p>
+											 Part of Stephen Ulibarri "Unreal Engine 5 - Gameplay Ability System" intermediate 104 hours course.</p>
 										<ul class="actions">
-											<li><a href="https://github.com/LienoPC/Aura-GameplayAbilitySystem.git" target="_blank" rel="noopener noreferrer" class="button small">GitHub Repository</a></li>
-											<li><a href="https://youtu.be/GwJrVPaeUAM" target="_blank" rel="noopener noreferrer" class="button small">Video Demo</a></li>
-											<li><a href="https://alberto-cagnazzo.itch.io/aura-diablo-like-rpg" target="_blank" rel="noopener noreferrer" class="button small">Itch.io Page</a></li>
+											<li><a href="https://github.com/LienoPC/Aura-GameplayAbilitySystem.git" class="button small">GitHub Repository</a></li>
 										</ul>
 									</article>
 
 									<article style="margin-bottom: 4em;">
-										<h5>Slash: Soulslike Demo</h5>
+										<!-- Slash Slideshow -->
+										<div class="slideshow-container">
+											<div class="slide fade">
+												<img src="images/pic02.jpg" alt="Slash Screenshot 1" />
+											</div>
+											<div class="slide fade">
+												<img src="images/pic03.jpg" alt="Slash Screenshot 2" />
+											</div>
+											<a class="prev" onclick="moveSlide(this, -1)">&#10094;</a>
+											<a class="next" onclick="moveSlide(this, 1)">&#10095;</a>
+										</div>
+										<h4>Slash: Soulslike Demo</h4>
 										<p>Prototyped core combat mechanics inspired by Soulslike games, focusing on animation montages, hit detection, and simple enemy AI behavior, along with all basic tools provided by the engine. Project results of Stephen Ulibarri "Unreal Engine 5 C++ The Ultimate Game Developer Course" 58 hours course.</p>
 										<ul class="actions">
 											<li><a href="https://github.com/LienoPC/UE5-StartingCourse-SlashProject.git" class="button small">GitHub Repository</a></li>
@@ -633,24 +293,21 @@
 									<hr />
 
 									<!-- Unity Projects -->
-									<h3 class="major">🎮 Unity</h3>
+									<h4 class="major">🎮 Unity Projects</h4>
 									
 									<article style="margin-bottom: 4em;">
 										<!-- Mecha-Ball Slideshow -->
-										<h4>Project Mecha-Ball</h4>
 										<div class="slideshow-container">
 											<div class="slide fade">
-												<img src="images/Mecha_1.png" alt="Mecha-Ball Screenshot 1" />
+												<img src="images/pic01.jpg" alt="Mecha-Ball Screenshot 1" />
 											</div>
 											<div class="slide fade">
-												<img src="images/Mecha_2.png" alt="Mecha-Ball Screenshot 2" />
-											</div>
-											<div class="slide fade">
-												<img src="images/Mecha_3.png" alt="Mecha-Ball Screenshot 2" />
+												<img src="images/pic02.jpg" alt="Mecha-Ball Screenshot 2" />
 											</div>
 											<a class="prev" onclick="moveSlide(this, -1)">&#10094;</a>
 											<a class="next" onclick="moveSlide(this, 1)">&#10095;</a>
 										</div>
+										<h4>Project Mecha-Ball</h4>
 										<p>Isometric puzzle game featuring a small robot. Help its AI train and become the best problem-solving system. Developed in a 6-person team as part of the "Game Design" course. Worked specifically on:</p>
 										<ul>
 											<li>Basic concept and design</li>
@@ -662,18 +319,21 @@
 											<li>Integration of FMOD Studio and audio engineering of the entire project</li>
 										</ul>
 										<ul class="actions">
-											<li><a href="https://lienopc.itch.io/project-mecha-ball" class="button small">Itch.io Page</a></li>
-											<li><a href="https://www.youtube.com/watch?v=LLXxinfmF0Q" class="button small">Features Showcase</a></li>
-
+											<li><a href="#" class="button small">Itch.io Page</a></li>
 										</ul>
 									</article>
 
 									<article style="margin-bottom: 4em;">
-										<!-- True Vision  --> 
-										 <div class="slideshow-container">
+										<!-- True Vision Slideshow -->
+										<div class="slideshow-container">
 											<div class="slide fade">
-												<img src="images/TrueVision.png" alt="True Vision" />
+												<img src="images/pic02.jpg" alt="True Vision Screenshot 1" />
 											</div>
+											<div class="slide fade">
+												<img src="images/pic03.jpg" alt="True Vision Screenshot 2" />
+											</div>
+											<a class="prev" onclick="moveSlide(this, -1)">&#10094;</a>
+											<a class="next" onclick="moveSlide(this, 1)">&#10095;</a>
 										</div>
 										<h4>True Vision | GGJ 2026</h4>
 										<p>Project developed during the 2026 Global Game Jam in a team of 5 people. Worked as programmer, specifically on:</p>
@@ -685,55 +345,38 @@
 											<li>Base concept and demo level</li>
 										</ul>
 										<ul class="actions">
-											<li><a href="https://programmatore-unity.itch.io/true-vision" class="button small">Itch.io Page</a></li>
-											<li><a href="https://www.youtube.com/watch?v=tWzppYTZRHA" class="button small">Trailer</a></li>
+											<li><a href="#" class="button small">Itch.io Page</a></li>
+											<li><a href="#" class="button alt small">Trailer</a></li>
 										</ul>
 									</article>
 
 									<article style="margin-bottom: 4em;">
-										<!-- Plague in Milan  --> 
-										<h4>Plague in Milan</h4>
-										<p>Project developed during the Virtual Reality course in a team of 4 people. First person, narrative, and educational game. Worked specifically on: </p>
-										<ul>
-											<li>AI of NPC with Behavior Trees</li>
-											<li>Animation system and blend with Behavior Trees and NPCs AI</li>
-											<li>Locomotion and dynamic animation blending of NPCs</li>
-											<li>Global lifecycle and scene management</li>
-										</ul>
+										<!-- Plague in Milan Slideshow -->
+										<div class="slideshow-container">
+											<div class="slide fade">
+												<img src="images/pic03.jpg" alt="Plague in Milan Screenshot 1" />
+											</div>
+											<div class="slide fade">
+												<img src="images/pic01.jpg" alt="Plague in Milan Screenshot 2" />
+											</div>
+											<a class="prev" onclick="moveSlide(this, -1)">&#10094;</a>
+											<a class="next" onclick="moveSlide(this, 1)">&#10095;</a>
+										</div>
+										<h4>The Plague in Milan</h4>
+										<p>First-person educational game developed as part of a team (4-person) for the “Virtual Reality” course (Dialogue and text are in Italian).</p>
 										<ul class="actions">
-											<li><a href="https://github.com/giulio-arecco/the-plague-in-milan" class="button small">GitHub Repository</a></li>
+											<li><a href="#" class="button small">Itch.io Page</a></li>
 										</ul>
 									</article>
+
 									<hr />
 
 									<!-- Other Categories -->
 									<div style="margin-top: 3em;">
-										<h3 class="major">C++ & OpenGL</h3>
+										<h4 class="major">OpenGL C++</h4>
 										<ul>
 											<li>
-												<strong>C++ Programmer @ GRANSTUDIO</strong> - <a href="https://github.com/LienoPC/Dragon--2D-Scroller-Game">GitHub Repository</a><br /> - <a href="https://www.youtube.com/watch?v=oxvbj1901CQ">Video Demo</a><br />
-												Working also on extending custom OpenXR layer, as an API layer injected inside OpenXR stack during execution. Used for autoalignment. 
-
-												<ul>
-													<li>All code follows C++ 26 Standard</li>
-													<li>Real-time communication with external edpoints (Rest, Websocket)</li>
-													<li>High-performance, multi-threaded algorithm for autoalignment</li>
-													<li>C++ OOP with RAII pattern</li>
-												</ul>
-											</li>
-											<li class="project-card">
-												<strong>Dragòn Dragòn - 2D Scroller Game</strong> - <a href="https://github.com/LienoPC/Dragon--2D-Scroller-Game">GitHub Repository</a><br /> - <a href="https://www.youtube.com/watch?v=oxvbj1901CQ">Video Demo</a><br />
-												
-												<div class="slideshow-container">
-												<div class="slide fade">
-													<img src="images/Dragon_forest.png" alt="Dragon Screenshot 1" style="max-width: 100%; max-height: 400px; object-fit: contain;"/>
-												</div>
-												<div class="slide fade">
-													<img src="images/Dragon_mountain.png" alt="Dragon Screenshot 2" style="max-width: 100%; max-height: 400px; object-fit: contain;"/>
-												</div>
-												<a class="prev" onclick="moveSlide(this, -1)">&#10094;</a>
-												<a class="next" onclick="moveSlide(this, 1)">&#10095;</a>
-												</div>
+												<strong>Dragòn Dragòn - 2D Scroller Game</strong> - <a href="#">GitHub Repository</a><br />
 												Gained experience with C++ coding principles and data structures in the context of game development, while also working with OpenGL graphics library. Specifically, I worked on the design and implementation of:
 												<ul>
 													<li>Main game loop system</li>
@@ -743,8 +386,6 @@
 												</ul>
 											</li>
 										</ul>
-
-										<h3 class="major">Other Projects</h3>
 
 										<h4 class="major">🤖 Machine Learning/AI Projects</h4>
 										<ul>
@@ -781,19 +422,6 @@
 													<li>Marble fence and material</li>
 													<li>Walls and floor</li>
 												</ul>
-												<div class="dragon-gallery slideshow-container">
-													<div class="slide fade">
-														<img src="images/Dragon_Vertical.png" alt="Dragon 3D environment vertical view" />
-													</div>
-													<div class="slide fade">
-														<img src="images/Dragon_Horizontal.png" alt="Dragon 3D environment horizontal view" />
-													</div>
-													<div class="slide fade">
-														<img src="images/Dragon_Closeup.png" alt="Dragon 3D environment close-up view" />
-													</div>
-													<a class="prev" onclick="moveSlide(this, -1)">&#10094;</a>
-													<a class="next" onclick="moveSlide(this, 1)">&#10095;</a>
-												</div>
 											</li>
 										</ul>
 									</div>
