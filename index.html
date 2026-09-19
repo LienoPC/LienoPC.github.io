@@ -1,885 +1,871 @@
 <!DOCTYPE HTML>
-<!--
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<title>Alberto - Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		
-		<!-- Night Theme & Custom Overrides -->
-		<style>
-			/* Main Body & Text */
-			body, input, select, textarea {
-				background-color: #121212 !important;
-				color: #b3b3b3 !important;
-			}
-			#main {
-				background-color: #121212 !important;
-			}
-			h1, h2, h3, h4, h5, h6, strong, b {
-				color: #ffffff !important;
-			}
-			p {
-				color: #b3b3b3 !important;
-			}
-			a {
-				color: #4da6ff !important;
-				border-bottom-color: rgba(77, 166, 255, 0.5) !important;
-			}
-			a:hover {
-				color: #80c1ff !important;
-				border-bottom-color: transparent !important;
-			}
-
-			/* Sidebar / Header */
-			#header {
-				background-color: #1a1a1a !important;
-			}
-			#header h1 a {
-				color: #ffffff !important;
-			}
-			#header p {
-				color: #a0a0a0 !important;
-			}
-			#nav ul li a {
-				color: #a0a0a0 !important;
-			}
-			#nav ul li a.active, #nav ul li a:hover {
-				color: #ffffff !important;
-			}
-
-			/* Banner Sizing */
-			#one .image.main img {
-				max-height: 300px !important;
-				object-fit: cover !important;
-				object-position: center !important;
-			}
-
-			/* Borders and Dividers */
-			hr {
-				border-bottom-color: #333333 !important;
-				border-top-color: #333333 !important;
-			}
-			#wrapper > #main > section {
-				border-top-color: #2a2a2a !important;
-			}
-
-			/* Lists & Icons */
-			ul.feature-icons li:before {
-				background-color: #2a2a2a !important; 
-				color: #4da6ff !important; 
-			}
-			ul.actions li a {
-				border-bottom: none !important;
-			}
-
-			/* Buttons */
-			input[type="submit"], input[type="reset"], input[type="button"], button, .button {
-				background-color: transparent !important;
-				box-shadow: inset 0 0 0 2px #444444 !important;
-				color: #ffffff !important;
-			}
-			input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover, .button:hover {
-				background-color: #2a2a2a !important;
-				box-shadow: inset 0 0 0 2px #4da6ff !important;
-				color: #4da6ff !important;
-			}
-			input[type="submit"].primary, button.primary, .button.primary {
-				background-color: #4da6ff !important;
-				box-shadow: none !important;
-				color: #121212 !important;
-			}
-			input[type="submit"].primary:hover, button.primary:hover, .button.primary:hover {
-				background-color: #80c1ff !important;
-				color: #121212 !important;
-			}
-
-			/* Form Inputs */
-			input[type="text"], input[type="password"], input[type="email"], select, textarea {
-				background: #1e1e1e !important;
-				border-color: #333333 !important;
-				color: #ffffff !important;
-			}
-			input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, select:focus, textarea:focus {
-				border-color: #4da6ff !important;
-				box-shadow: 0 0 0 1px #4da6ff !important;
-			}
-
-			/* Footer */
-			#footer .copyright {
-				color: #666666 !important;
-			}
-			#footer .copyright a {
-				color: #888888 !important;
-			}
-			#footer .copyright a:hover {
-				color: #ffffff !important;
-			}
-
-			/* ---------------- Slideshow CSS ---------------- */
-			.slideshow-container {
-				position: relative;
-				max-width: 100%;
-				margin: auto;
-				margin-bottom: 1.5em;
-				text-align: center;
-				overflow: hidden;
-				border-radius: 4px;
-				background-color: #000; 
-			}
-			.slide {
-				display: none;
-			}
-			.slide img {
-				max-width: 100%;
-				height: auto;
-				display: block;
-				margin: 0 auto;
-			}
-			/* Prev & Next Buttons */
-			.slideshow-container .prev, .slideshow-container .next {
-				cursor: pointer;
-				position: absolute;
-				top: 50%;
-				width: auto;
-				padding: 16px;
-				margin-top: -22px;
-				color: white !important;
-				font-weight: bold;
-				font-size: 18px;
-				transition: 0.6s ease;
-				border-radius: 0 3px 3px 0;
-				user-select: none;
-				background-color: rgba(0,0,0,0.6);
-				border: none !important;
-				text-decoration: none !important;
-				z-index: 2;
-			}
-			.slideshow-container .prev {
-				left: 0;
-			}
-			.slideshow-container .next {
-				right: 0;
-				border-radius: 3px 0 0 3px;
-			}
-			.slideshow-container .prev:hover, .slideshow-container .next:hover {
-				background-color: rgba(77, 166, 255, 0.9);
-			}
-			/* Fading animation */
-			.fade {
-				animation-name: fade;
-				animation-duration: 1s;
-			}
-			@keyframes fade {
-				from {opacity: .4} 
-				to {opacity: 1}
-			}
-
-			/* Portfolio visual system */
-			:root {
-				--ink: #101820;
-				--ink-soft: #172630;
-				--paper: #f3f0e8;
-				--paper-deep: #e8e4da;
-				--text: #26343b;
-				--muted: #64747a;
-				--cyan: #35d0c2;
-				--coral: #ff826d;
-				--line: rgba(38, 52, 59, 0.16);
-			}
-
-			html {
-				scroll-behavior: smooth;
-			}
-
-			body, input, select, textarea {
-				background-color: var(--paper) !important;
-				color: var(--text) !important;
-				font-family: "Lato", sans-serif;
-				letter-spacing: 0.01em;
-			}
-
-			body {
-				background: var(--paper) !important;
-			}
-
-			#wrapper, #main {
-				background: var(--paper) !important;
-			}
-
-			#main > section {
-				border-top: 1px solid var(--line) !important;
-				position: relative;
-			}
-
-			#main > section:nth-child(even) {
-				background: var(--paper-deep) !important;
-			}
-
-			#main > section > .container {
-				max-width: 68em;
-				padding: 6.5em 3em 5.5em;
-			}
-
-			h1, h2, h3, h4, h5, h6, strong, b {
-				color: var(--ink) !important;
-				letter-spacing: -0.025em;
-			}
-
-			h2 {
-				font-size: clamp(2em, 4vw, 3.4em);
-				line-height: 1.08;
-			}
-
-			h3 {
-				font-size: 2em;
-				line-height: 1.15;
-			}
-
-			h4 {
-				font-size: 1.22em;
-				line-height: 1.3;
-			}
-
-			h5 {
-				font-size: 1.25em;
-				line-height: 1.3;
-			}
-
-			p, li {
-				color: var(--text) !important;
-			}
-
-			a {
-				color: #087f83 !important;
-				border-bottom-color: rgba(8, 127, 131, 0.35) !important;
-			}
-
-			a:hover {
-				color: #e75e51 !important;
-			}
-
-			.major {
-				position: relative;
-			}
-
-			header.major {
-				border-left: 4px solid var(--coral);
-				padding-left: 1.4em;
-			}
-
-			header.major p {
-				color: var(--muted) !important;
-				font-size: 1.15em;
-				margin-top: 0.65em;
-			}
-
-			#one .image.main {
-				height: clamp(13em, 22vw, 19em);
-				margin: 0;
-				overflow: hidden;
-				position: relative;
-			}
-
-			#one .image.main:after {
-				background: linear-gradient(90deg, rgba(16, 24, 32, 0.5), transparent 65%);
-				content: "";
-				inset: 0;
-				pointer-events: none;
-				position: absolute;
-			}
-
-			#one .image.main img {
-				height: 100%;
-				max-height: none !important;
-				object-fit: cover !important;
-				object-position: center;
-				width: 100%;
-			}
-
-			#two .container > p, #three .container > p, #four .container > p {
-				color: var(--muted) !important;
-				max-width: 48em;
-			}
-
-			ul.feature-icons {
-				display: grid;
-				gap: 0.8em;
-				grid-auto-rows: 8.5em;
-				grid-template-columns: repeat(2, minmax(0, 1fr));
-				margin-top: 3em;
-			}
-
-			ul.feature-icons li {
-				align-items: center;
-				background: rgba(255, 255, 255, 0.62);
-				border: 1px solid rgba(38, 52, 59, 0.12);
-				display: flex;
-				height: 100%;
-				margin: 0 !important;
-				min-height: 6.25em;
-				padding: 1.25em 1.35em 1.25em 4.55em;
-				width: auto;
-			}
-
-			ul.feature-icons li:before {
-				background: var(--cyan) !important;
-				box-shadow: 0 0 0 5px rgba(53, 208, 194, 0.14);
-				color: var(--ink) !important;
-				left: 1em;
-				top: 50%;
-				transform: translateY(-50%);
-			}
-
-			#three h3.major, #three h4.major {
-				border-bottom: 1px solid var(--line);
-				color: var(--ink) !important;
-				padding-bottom: 0.75em;
-			}
-
-			#three article {
-				background: rgba(255, 255, 255, 0.5);
-				border: 1px solid rgba(38, 52, 59, 0.1);
-				box-shadow: 0 1em 2.5em rgba(16, 24, 32, 0.06);
-				padding: 2em;
-			}
-
-			#three li.project-card {
-				background: rgba(255, 255, 255, 0.5);
-				border: 1px solid rgba(38, 52, 59, 0.1);
-				box-shadow: 0 1em 2.5em rgba(16, 24, 32, 0.06);
-				list-style: none;
-				margin: 0 0 4em -0.5em;
-				padding: 2em;
-			}
-
-			#three article h5, #three article h4 {
-				color: var(--ink) !important;
-			}
-
-			.slideshow-container {
-				background: var(--ink) !important;
-				border: 1px solid rgba(16, 24, 32, 0.22);
-				box-shadow: 0 0.8em 1.8em rgba(16, 24, 32, 0.16);
-				margin: 0 0 2em;
-			}
-
-			.slide img {
-				max-height: 31em;
-				object-fit: contain;
-				width: 100%;
-			}
-
-			.slideshow-container .prev, .slideshow-container .next {
-				background: rgba(16, 24, 32, 0.72);
-				color: var(--cyan) !important;
-				padding: 0.8em 0.95em;
-			}
-
-			.slideshow-container .prev:hover, .slideshow-container .next:hover {
-				background: var(--coral);
-				color: var(--ink) !important;
-			}
-
-			.dragon-gallery {
-				margin-top: 2em;
-			}
-
-			.dragon-gallery .slide img {
-				background: var(--ink);
-				max-height: 31em;
-				object-fit: contain;
-				padding: 0.35em;
-				width: 100%;
-			}
-
-			.button, input[type="submit"], input[type="reset"], input[type="button"], button {
-				border-radius: 0 !important;
-				font-size: 0.72em !important;
-				font-weight: 700;
-				letter-spacing: 0.08em;
-				text-transform: uppercase;
-			}
-
-			.button, input[type="submit"].primary {
-				background: var(--ink) !important;
-				box-shadow: none !important;
-				color: #ffffff !important;
-			}
-
-			.button:hover, input[type="submit"].primary:hover {
-				background: var(--coral) !important;
-				color: var(--ink) !important;
-			}
-
-			#header {
-				background: var(--ink) !important;
-				box-shadow: -1em 0 3em rgba(16, 24, 32, 0.08);
-				width: 20em;
-			}
-
-			#header > header {
-				padding: 3.5em 2.5em 2em;
-			}
-
-			#header > header .avatar {
-				border: 3px solid var(--cyan);
-				box-shadow: 0 0 0 8px rgba(53, 208, 194, 0.1);
-				width: 8.5em;
-			}
-
-			#header h1 a, #header h2, #header h3, #header h4, #header h5, #header h6 {
-				color: #ffffff !important;
-			}
-
-			#header > header p, #header > footer .icons li a {
-				color: #9cb1b6 !important;
-			}
-
-			#header > nav ul li {
-				border-top-color: rgba(255, 255, 255, 0.1);
-			}
-
-			#header > nav ul li a {
-				color: #9cb1b6 !important;
-				font-size: 0.78em;
-				letter-spacing: 0.12em;
-				text-transform: uppercase;
-			}
-
-			#header > nav ul li a.active, #header > nav ul li a:hover {
-				background: var(--cyan) !important;
-				color: var(--ink) !important;
-			}
-
-			#footer {
-				background: var(--ink) !important;
-				color: #84969c !important;
-			}
-
-			#footer .copyright, #footer .copyright a {
-				color: #84969c !important;
-			}
-
-			input[type="text"], input[type="password"], input[type="email"], select, textarea {
-				background: rgba(255, 255, 255, 0.65) !important;
-				border: 1px solid var(--line) !important;
-				color: var(--text) !important;
-			}
-
-			input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, select:focus, textarea:focus {
-				border-color: var(--cyan) !important;
-				box-shadow: 0 0 0 1px var(--cyan) !important;
-			}
-
-			@media screen and (max-width: 736px) {
-				#header {
-					width: 17em;
-				}
-
-				#main > section > .container {
-					padding: 4em 1.5em 3.5em;
-				}
-
-				ul.feature-icons {
-					grid-auto-rows: 8.5em;
-					grid-template-columns: 1fr;
-				}
-
-				ul.feature-icons li {
-					min-height: 5.5em;
-				}
-
-				#three article {
-					padding: 1.25em;
-				}
-
-				.dragon-gallery .slide img {
-					max-height: 24em;
-				}
-
-				#one .image.main {
-					height: 11em;
-				}
-			}
-		</style>
-	</head>
-	<body class="is-preload">
-
-		<!-- Header -->
-			<section id="header">
-				<header>
-					<span class="image avatar"><img src="images/avatar.jpg" alt="Alberto" /></span>
-					<h1 id="logo"><a href="#">Alberto</a></h1>
-					<p>Humble Computer Engineer<br />
-					and Game Developer</p>
-				</header>
-				<nav id="nav">
-					<ul>
-						<li><a href="#one" class="active">About</a></li>
-						<li><a href="#two">Things I Can Do</a></li>
-						<li><a href="#three">Portfolio</a></li>
-						<li><a href="#four">Contact</a></li>
-					</ul>
-				</nav>
-				<footer>
-					<ul class="icons">
-						<li><a href="www.linkedin.com/in/alberto-cagnazzo-038202338" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/LienoPC" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="albertocag9@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-				</footer>
-			</section>
-
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- One -->
-							<section id="one">
-								<div class="image main" data-position="center">
-									<img src="images/Banne.png" alt="Banner Image" />
-								</div>
-								<div class="container">
-									<header class="major">
-										<h2>Hi there, I'm Alberto!</h2>
-										<p>Humble Computer Engineer and Game Developer.</p>
-									</header>
-									<p>This is my portfolio, simple as that. Mostly videogames projects with a bit of tech verticalities.
-										What mainly interests me is to explore engineering techniques, patterns and optimization applied to games.</p>
-								</div>
-							</section>
-
-						<!-- Two -->
-							<section id="two">
-								<div class="container">
-									<h3>Things I Can Do</h3>
-									<p>With a strong foundation in computer engineering, I've developed a diverse skill set ranging from low-level system programming to high-level game design and AI model integration.</p>
-									<ul class="feature-icons">
-										<li class="icon solid fa-gamepad">Unreal Engine & Unity</li>
-										<li class="icon solid fa-code">C++ Enthusiast (I also manage well C#, Python, Type/JavaScript)</li>
-										<li class="icon solid fa-cube">OpenGL & Computer Graphics</li>
-										<li class="icon solid fa-robot">Machine Learning & AI (Hands on CNNs)</li>
-										<li class="icon solid fa-video">3D Modeling & Animation (Blender)</li>
-									</ul>
-								</div>
-							</section>
-
-						<!-- Three -->
-							<section id="three">
-								<div class="container">
-									<h3>Portfolio & Accomplishments</h3>
-									<p>Below is a selection of my recent work across different domains, ranging from game development to machine learning and 3D animation.</p>
-									
-									<!-- Unreal Engine 5 Projects -->
-									<h3 class="major" style="margin-top: 3em;">🎮 Unreal Engine</h3>
-
-									<h4 class="major" style="margin-top: 3em;">VR/Engine Programmer @ GRANSTUDIO - <a href="https://www.digiphy.eu">Digiphy Website</a></h4> <br />
-									Working on DigiPHY system, an adaptive mixed-reality seating buck in support of automotive design process.<br/>
-									Gained expertise on:
-
-									
-									<ul>
-										<li>Unreal Engine Framework extension and customization</li>
-										<li>Engine/Editor-Programming level features for in-engine custom functionalities</li>
-										<li>Engine and Editor level maps, lifetime, UObjects and Asset Management.</li>
-										<li>Networking with custom server systems, collaboration and multiplayer.</li>
-									</ul>
-									<h4 class="major" style="margin-top: 3em;">Personal Projects</h4>
-
-									<p style="margin-bottom: 3em;">Self-driven projects developed for educational and skill-building purposes, aimed at mastering Unreal Engine 5 workflows and systems:</p>
-									
-									<article style="margin-bottom: 4em;">
-										<!-- Aura Slideshow -->
-										<h5>Aura: Top-Down RPG </h5>
-
-										<div class="slideshow-container">
-											<div class="slide fade">
-												<img src="images/Aura_1_2.png" alt="Aura Screenshot 2" />
-											</div>
-											<div class="slide fade">
-												<img src="images/Aura_1_1.png" alt="Aura Screenshot 1" />
-											</div>
-											<div class="slide fade">
-												<img src="images/Aura_1_3.png" alt="Aura Screenshot 3" />
-											</div>
-											<a class="prev" onclick="moveSlide(this, -1)">&#10094;</a>
-											<a class="next" onclick="moveSlide(this, 1)">&#10095;</a>
-										</div>
-										<p>Exploiting UE Gameplay Ability System to create scalable character abilities and effects in a top-down RPG game. Everything in the project logic is self-developed.
-											 Part of Stephen Ulibarri "Unreal Engine 5 - Gameplay Ability System" intermediate 104 hours course. More technical info in repo README. </p>
-										<ul class="actions">
-											<li><a href="https://github.com/LienoPC/Aura-GameplayAbilitySystem.git" target="_blank" rel="noopener noreferrer" class="button small">GitHub Repository</a></li>
-											<li><a href="https://youtu.be/GwJrVPaeUAM" target="_blank" rel="noopener noreferrer" class="button small">Video Demo</a></li>
-											<li><a href="https://alberto-cagnazzo.itch.io/aura-diablo-like-rpg" target="_blank" rel="noopener noreferrer" class="button small">Itch.io Page</a></li>
-										</ul>
-									</article>
-
-									<article style="margin-bottom: 4em;">
-										<h5>Slash: Soulslike Demo</h5>
-										<p>Prototyped core combat mechanics inspired by Soulslike games, focusing on animation montages, hit detection, and simple enemy AI behavior, along with all basic tools provided by the engine. Project results of Stephen Ulibarri "Unreal Engine 5 C++ The Ultimate Game Developer Course" 58 hours course.</p>
-										<ul class="actions">
-											<li><a href="https://github.com/LienoPC/UE5-StartingCourse-SlashProject.git" class="button small">GitHub Repository</a></li>
-										</ul>
-									</article>
-
-									<hr />
-
-									<!-- Unity Projects -->
-									<h3 class="major">🎮 Unity</h3>
-									
-									<article style="margin-bottom: 4em;">
-										<!-- Mecha-Ball Slideshow -->
-										<h4>Project Mecha-Ball</h4>
-										<div class="slideshow-container">
-											<div class="slide fade">
-												<img src="images/Mecha_1.png" alt="Mecha-Ball Screenshot 1" />
-											</div>
-											<div class="slide fade">
-												<img src="images/Mecha_2.png" alt="Mecha-Ball Screenshot 2" />
-											</div>
-											<div class="slide fade">
-												<img src="images/Mecha_3.png" alt="Mecha-Ball Screenshot 2" />
-											</div>
-											<a class="prev" onclick="moveSlide(this, -1)">&#10094;</a>
-											<a class="next" onclick="moveSlide(this, 1)">&#10095;</a>
-										</div>
-										<p>Isometric puzzle game featuring a small robot. Help its AI train and become the best problem-solving system. Developed in a 6-person team as part of the "Game Design" course. Worked specifically on:</p>
-										<ul>
-											<li>Basic concept and design</li>
-											<li>High-level player logic, player ball controller and multiple control module system</li>
-											<li>Player animation system, procedural animation and its interaction with physics</li>
-											<li>Player physics system</li>
-											<li>Game loading management and game architecture; game states logic</li>
-											<li>Game design and level design (level 4)</li>
-											<li>Integration of FMOD Studio and audio engineering of the entire project</li>
-										</ul>
-										<ul class="actions">
-											<li><a href="https://lienopc.itch.io/project-mecha-ball" class="button small">Itch.io Page</a></li>
-											<li><a href="https://www.youtube.com/watch?v=LLXxinfmF0Q" class="button small">Features Showcase</a></li>
-
-										</ul>
-									</article>
-
-									<article style="margin-bottom: 4em;">
-										<!-- True Vision  --> 
-										 <div class="slideshow-container">
-											<div class="slide fade">
-												<img src="images/TrueVision.png" alt="True Vision" />
-											</div>
-										</div>
-										<h4>True Vision | GGJ 2026</h4>
-										<p>Project developed during the 2026 Global Game Jam in a team of 5 people. Worked as programmer, specifically on:</p>
-										<ul>
-											<li>Attacks, hitbox and enemy-interaction mechanics</li>
-											<li>Hook mechanic with interaction with walls and object dragging</li>
-											<li>In-game buttons and plates with trigger logic associated</li>
-											<li>Game architecture, audio system, level logic</li>
-											<li>Base concept and demo level</li>
-										</ul>
-										<ul class="actions">
-											<li><a href="https://programmatore-unity.itch.io/true-vision" class="button small">Itch.io Page</a></li>
-											<li><a href="https://www.youtube.com/watch?v=tWzppYTZRHA" class="button small">Trailer</a></li>
-										</ul>
-									</article>
-
-									<article style="margin-bottom: 4em;">
-										<!-- Plague in Milan  --> 
-										<h4>Plague in Milan</h4>
-										<p>Project developed during the Virtual Reality course in a team of 4 people. First person, narrative, and educational game. Worked specifically on: </p>
-										<ul>
-											<li>AI of NPC with Behavior Trees</li>
-											<li>Animation system and blend with Behavior Trees and NPCs AI</li>
-											<li>Locomotion and dynamic animation blending of NPCs</li>
-											<li>Global lifecycle and scene management</li>
-										</ul>
-										<ul class="actions">
-											<li><a href="https://github.com/giulio-arecco/the-plague-in-milan" class="button small">GitHub Repository</a></li>
-										</ul>
-									</article>
-									<hr />
-
-									<!-- Other Categories -->
-									<div style="margin-top: 3em;">
-										<h3 class="major">C++ & OpenGL</h3>
-										<ul>
-											<li>
-												<strong>C++ Programmer @ GRANSTUDIO</strong> - <a href="https://github.com/LienoPC/Dragon--2D-Scroller-Game">GitHub Repository</a><br /> - <a href="https://www.youtube.com/watch?v=oxvbj1901CQ">Video Demo</a><br />
-												Working also on extending custom OpenXR layer, as an API layer injected inside OpenXR stack during execution. Used for autoalignment. 
-
-												<ul>
-													<li>All code follows C++ 26 Standard</li>
-													<li>Real-time communication with external edpoints (Rest, Websocket)</li>
-													<li>High-performance, multi-threaded algorithm for autoalignment</li>
-													<li>C++ OOP with RAII pattern</li>
-												</ul>
-											</li>
-											<li class="project-card">
-												<strong>Dragòn Dragòn - 2D Scroller Game</strong> - <a href="https://github.com/LienoPC/Dragon--2D-Scroller-Game">GitHub Repository</a><br /> - <a href="https://www.youtube.com/watch?v=oxvbj1901CQ">Video Demo</a><br />
-												
-												<div class="slideshow-container">
-												<div class="slide fade">
-													<img src="images/Dragon_forest.png" alt="Dragon Screenshot 1" style="max-width: 100%; max-height: 400px; object-fit: contain;"/>
-												</div>
-												<div class="slide fade">
-													<img src="images/Dragon_mountain.png" alt="Dragon Screenshot 2" style="max-width: 100%; max-height: 400px; object-fit: contain;"/>
-												</div>
-												<a class="prev" onclick="moveSlide(this, -1)">&#10094;</a>
-												<a class="next" onclick="moveSlide(this, 1)">&#10095;</a>
-												</div>
-												Gained experience with C++ coding principles and data structures in the context of game development, while also working with OpenGL graphics library. Specifically, I worked on the design and implementation of:
-												<ul>
-													<li>Main game loop system</li>
-													<li>Graphics classes (sprite_renderer, shader, texture, post_processor)</li>
-													<li>Post processing shaders</li>
-													<li>Gameplay logic, data structures for increasing difficulty and levels (game_level, game_object, bullet)</li>
-												</ul>
-											</li>
-										</ul>
-
-										<h3 class="major">Other Projects</h3>
-
-										<h4 class="major">🤖 Machine Learning/AI Projects</h4>
-										<ul>
-											<li><strong>Manga Auto Colorization:</strong> CNN Model for automatic manga colorization.</li>
-											<li><strong>Human and Object Detection for Security Systems:</strong> Prototype script using the YOLO detection system for Object and Human detection.</li>
-										</ul>
-
-										<h4 class="major">💻 Other Programming Projects</h4>
-										<ul>
-											<li><strong>N-Body Cuda Simulation:</strong> CUDA Project for N-Body Gravitational System Simulation.</li>
-											<li><strong>OS161 - Demand Paging System:</strong> OS161 Kernel extension: Demand Paging Memory System Implementation.</li>
-											<li><strong>EZ-Electronics:</strong> Online store web application developed for Software Engineering exam.</li>
-											<li><strong>Misfortune Game:</strong> A web application developed in React and JavaScript (frontend and backend).</li>
-										</ul>
-
-										<h4 class="major">🎞 Other Projects (Computer Graphics & Animation)</h4>
-										<ul>
-											<li>
-												<strong>"The Postman" Animation Reproduction</strong> - <a href="#">Watch the video on Google Drive</a><br />
-												CGI reproduction of "The Postman" ad spot, project for the “Computer Animation” exam at Politecnico di Torino. Created a 30-second 3D-animated video using Blender; worked specifically on:
-												<ul>
-													<li>Modeling, rigging and animation of the dog</li>
-													<li>Scene animation using modern keyframing and motion techniques</li>
-													<li>Video sections on which I worked: 0:11-0:13; 0:18-0:23, 0:27-0:29 (fence)</li>
-												</ul>
-											</li>
-											<li>
-												<strong>🆛 Dragòn - 3D Environment</strong><br />
-												CGI render of an original environment, part of the project for "Computer Graphics" exam at Politecnico di Torino. Applied both classical and modern modeling techniques, including fluid simulation, sculpting, soft and rigid bodies, dynamic painting etc. Elements on which I worked:
-												<ul>
-													<li>Censer modeling, material and rigidbody simulation for chains</li>
-													<li>Lava simulation and material</li>
-													<li>Dragon tooth</li>
-													<li>Marble fence and material</li>
-													<li>Walls and floor</li>
-												</ul>
-												<div class="dragon-gallery slideshow-container">
-													<div class="slide fade">
-														<img src="images/Dragon_Vertical.png" alt="Dragon 3D environment vertical view" />
-													</div>
-													<div class="slide fade">
-														<img src="images/Dragon_Horizontal.png" alt="Dragon 3D environment horizontal view" />
-													</div>
-													<div class="slide fade">
-														<img src="images/Dragon_Closeup.png" alt="Dragon 3D environment close-up view" />
-													</div>
-													<a class="prev" onclick="moveSlide(this, -1)">&#10094;</a>
-													<a class="next" onclick="moveSlide(this, 1)">&#10095;</a>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</section>
-
-						<!-- Four -->
-							<section id="four">
-								<div class="container">
-									<h3>Contact Me</h3>
-									<p>Interested in collaborating on a project, hiring me, or just want to chat about game development? Feel free to reach out using the form below!</p>
-									<form method="post" action="#">
-										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-											<div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
-											<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" class="primary" value="Send Message" /></li>
-													<li><input type="reset" value="Reset Form" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
-								</div>
-							</section>
-
-					</div>
-
-				<!-- Footer -->
-					<section id="footer">
-						<div class="container">
-							<ul class="copyright">
-								<li>&copy; Alberto. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-			<!-- Slideshow Custom Script -->
-			<script>
-				document.addEventListener("DOMContentLoaded", function() {
-					// Initialize all slideshows on the page
-					let slideshows = document.querySelectorAll('.slideshow-container');
-					slideshows.forEach(function(slideshow) {
-						slideshow.setAttribute('data-slide-index', '0');
-						showSlides(slideshow, 0);
-					});
-				});
-
-				function moveSlide(btn, n) {
-					// Find the specific slideshow container for the button clicked
-					let slideshow = btn.closest('.slideshow-container');
-					let currentIndex = parseInt(slideshow.getAttribute('data-slide-index'));
-					showSlides(slideshow, currentIndex + n);
-				}
-
-				function showSlides(slideshow, n) {
-					let slides = slideshow.querySelectorAll('.slide');
-					let newIndex = n;
-					
-					// Loop back to start or end if bounds are reached
-					if (n >= slides.length) { newIndex = 0; }
-					if (n < 0) { newIndex = slides.length - 1; }
-					
-					// Hide all slides
-					slides.forEach(slide => slide.style.display = "none");
-					
-					// Show the active slide
-					slides[newIndex].style.display = "block";
-					
-					// Update the index attribute
-					slideshow.setAttribute('data-slide-index', newIndex);
-				}
-			</script>
-
-	</body>
+<head>
+    <title>Alberto - Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    
+    <!-- Modern Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        /* --- Modern Tech Theme Variables --- */
+        :root {
+            --bg-main: #090a0f;
+            --bg-card: rgba(20, 22, 30, 0.7);
+            --bg-card-hover: rgba(28, 31, 43, 0.9);
+            --text-primary: #f8f9fa;
+            --text-secondary: #a0aab2;
+            --accent-cyan: #00e5ff;
+            --accent-purple: #b534cf;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --glow: 0 0 20px rgba(0, 229, 255, 0.15);
+            --font-main: 'Inter', sans-serif;
+            --font-code: 'Fira Code', monospace;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 229, 255, 0.04), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(181, 52, 207, 0.04), transparent 25%);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Typography --- */
+        h1, h2, h3, h4, h5 {
+            color: var(--text-primary);
+            margin-top: 0;
+            font-weight: 800;
+        }
+        p { color: var(--text-secondary); margin-bottom: 1.5rem; }
+        a { color: var(--accent-cyan); text-decoration: none; transition: var(--transition); }
+        a:hover { color: var(--accent-purple); text-shadow: 0 0 8px rgba(181, 52, 207, 0.4); }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- Layout & Navigation --- */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(9, 10, 15, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-cyan);
+            object-fit: cover;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover { color: var(--accent-cyan); }
+
+        /* --- Sections Base --- */
+        section {
+            padding: 6rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* --- Hero / About Me Section --- */
+        #about {
+            padding-top: 8rem;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: none;
+        }
+
+        .hero-banner-container {
+            width: 100%;
+            height: 380px;
+            margin-bottom: 3rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--glow);
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .hero-banner-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Keeps the top banner fully covering the space */
+            object-position: center;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .hero-banner-container:hover img {
+            transform: scale(1.02);
+        }
+
+        .hero-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text .subtitle {
+            font-family: var(--font-code);
+            color: var(--accent-cyan);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        /* --- Competencies / Skills --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            width: 100%;
+        }
+
+        .skill-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .skill-card i {
+            font-size: 1.5rem;
+            color: var(--accent-cyan);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+            box-shadow: var(--glow);
+            background: var(--bg-card-hover);
+        }
+
+        /* --- Work Experience (Highlight) --- */
+        .work-highlight {
+            background: linear-gradient(180deg, rgba(20, 22, 30, 0.9) 0%, rgba(9, 10, 15, 0) 100%);
+            border: 1px solid var(--accent-purple);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 5rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(181, 52, 207, 0.05);
+        }
+
+        .work-highlight h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .work-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .work-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .work-item h4 { color: var(--accent-cyan); font-size: 1.3rem; margin-bottom: 0.5rem; }
+        
+        /* --- Projects Grid --- */
+        .category-title {
+            font-size: 1.8rem;
+            margin: 4rem 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .project-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-content h5, .project-content h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .project-content ul {
+            padding-left: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        .project-content li { margin-bottom: 0.4rem; }
+
+        .actions {
+            margin-top: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .actions a {
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .actions a:hover {
+            background: var(--accent-cyan);
+            color: var(--bg-main);
+            border-color: var(--accent-cyan);
+            box-shadow: var(--glow);
+            text-shadow: none;
+        }
+
+        /* --- Slideshow Adapts --- */
+        .slideshow-container {
+            width: 100%;
+            height: 250px;
+            position: relative;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .slide { display: none; height: 100%; }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Changed to contain so the entire image is always visible */
+            opacity: 0.85;
+            transition: var(--transition);
+        }
+        .project-card:hover .slide img { opacity: 1; }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            padding: 10px 15px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            background: rgba(0,0,0,0.5);
+            border-radius: 5px;
+            user-select: none;
+            transition: var(--transition);
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        .prev:hover, .next:hover { background: var(--accent-cyan); color: #000; }
+        
+        .fade { animation: fade 0.8s ease-in-out; }
+        @keyframes fade { from {opacity: 0.4} to {opacity: 1} }
+
+        /* --- Simple Lists (Other Projects) --- */
+        .simple-list {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        .simple-list li { margin-bottom: 1rem; color: var(--text-secondary); }
+        .simple-list strong { color: var(--text-primary); }
+
+        /* --- Contact Form & Footer --- */
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .input-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group > * { flex: 1; }
+
+        input, textarea {
+            width: 100%;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            box-sizing: border-box;
+            transition: var(--transition);
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.1);
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover { opacity: 0.9; transform: translateY(-2px); }
+        
+        .btn-reset {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-reset:hover { background: rgba(255,255,255,0.05); color: var(--text-primary); }
+
+        footer {
+            background: #050608;
+            padding: 4rem 0 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .social-icons a:hover {
+            color: var(--bg-main);
+            background: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            transform: translateY(-5px);
+            box-shadow: var(--glow);
+        }
+
+        .copyright { color: var(--text-secondary); font-size: 0.9rem; }
+
+        @media (max-width: 900px) {
+            .hero-text h1 { font-size: 3rem; }
+            .hero-banner-container { height: 250px; }
+            .nav-links { display: none; }
+            .input-group { flex-direction: column; gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav>
+        <div class="container nav-content">
+            <div class="nav-logo">
+                <img src="images/avatar.jpg" alt="Alberto Avatar" />
+                <span>Alberto</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: ABOUT ME -->
+    <section id="about">
+        <div class="container">
+            <!-- Full Width Banner Above Text -->
+            <div class="hero-banner-container">
+                <img src="images/Banne.png" alt="Banner Image" />
+            </div>
+
+            <div class="hero-text">
+                <span class="subtitle">{'Hesitation is Defeat'}</span>
+                <h1>Hi there,<br>I'm <span class="gradient-text">Alberto!</span></h1>
+                <p><strong>Game Developer & Software Engineer.</strong></p>
+                <p>This is my portfolio, simple as that. Mostly videogames projects with a bit of tech verticalities. What mainly interests me is to explore engineering techniques, patterns and optimization applied to games.</p>
+                <p>With a strong foundation in computer engineering, I've developed a diverse skill set ranging from low-level system programming to high-level game design and AI model integration.</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card"><i class="fa-solid fa-gamepad"></i> Unreal Engine & Unity</div>
+                <div class="skill-card"><i class="fa-solid fa-code"></i> C++ (also C#, Python, JS)</div>
+                <div class="skill-card"><i class="fa-solid fa-cube"></i> OpenGL & Graphics</div>
+                <div class="skill-card"><i class="fa-solid fa-robot"></i> Machine Learning & AI</div>
+                <div class="skill-card"><i class="fa-solid fa-video"></i> 3D Modeling (Blender)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: PORTFOLIO & PROJECTS -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>Portfolio & Accomplishments</h2>
+                <p>Below is a selection of my recent work across different domains, ranging from game development to machine learning and 3D animation.</p>
+            </div>
+
+            <!-- Professional Experience Block -->
+            <div class="work-highlight">
+                <h3><i class="fa-solid fa-briefcase"></i> Professional Work Experience</h3>
+                
+                <div class="work-item">
+                    <h4>VR/Engine Programmer @ GRANSTUDIO</h4>
+                    <p>Working on DigiPHY system, an adaptive mixed-reality seating buck in support of automotive design process. <a href="https://www.digiphy.eu">Digiphy Website</a></p>
+                    <p>Gained expertise on:</p>
+                    <ul>
+                        <li>Unreal Engine Framework extension and customization</li>
+                        <li>Engine/Editor-Programming level features for in-engine custom functionalities</li>
+                        <li>Engine and Editor level maps, lifetime, UObjects and Asset Management.</li>
+                        <li>Networking with custom server systems, collaboration and multiplayer.</li>
+                    </ul>
+                </div>
+
+                <div class="work-item">
+                    <h4>C++ Programmer @ GRANSTUDIO</h4>
+                    <p>Working also on extending custom OpenXR layer, as an API layer injected inside OpenXR stack during execution. Used for autoalignment. 
+                    <ul>
+                        <li>All code follows C++ 26 Standard</li>
+                        <li>Real-time communication with external edpoints (Rest, Websocket)</li>
+                        <li>High-performance, multi-threaded algorithm for autoalignment</li>
+                        <li>C++ OOP with RAII pattern</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Unreal Engine Projects -->
+            <h3 class="category-title">
+                <!-- Authentic Unreal Engine Inline SVG -->
+			<img src="images/unreal-engine2.png" alt="Unreal Engine" style="height: 1.5em; width: 1.5em; vertical-align: 0em; margin-right: 0.1em; object-fit: contain;">
+              Unreal Engine 5
+            </h3>
+            <p style="margin-bottom: 2rem;">Self-driven projects developed for educational and skill-building purposes, aimed at mastering Unreal Engine 5 workflows and systems:</p>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="slideshow-container">
+                        <div class="slide fade"><img src="images/Aura_1_2.png" alt="Aura Screenshot 2" /></div>
+                        <div class="slide fade"><img src="images/Aura_1_1.png" alt="Aura Screenshot 1" /></div>
+                        <div class="slide fade"><img src="images/Aura_1_3.png" alt="Aura Screenshot 3" /></div>
+                        <a class="prev" onclick="moveSlide(this, -1)">&#10094;</a>
+                        <a class="next" onclick="moveSlide(this, 1)">&#10095;</a>
+                    </div>
+                    <div class="project-content">
+                        <h5>Aura: Top-Down RPG</h5>
+                        <p>Exploiting UE Gameplay Ability System to create scalable character abilities and effects in a top-down RPG game. Everything in the project logic is self-developed. Part of Stephen Ulibarri "Unreal Engine 5 - Gameplay Ability System" intermediate 104 hours course. More technical info in repo README.</p>
+                        <div class="actions">
+                            <a href="https://github.com/LienoPC/Aura-GameplayAbilitySystem.git" target="_blank">GitHub</a>
+                            <a href="https://youtu.be/GwJrVPaeUAM" target="_blank">Video</a>
+                            <a href="https://alberto-cagnazzo.itch.io/aura-diablo-like-rpg" target="_blank">Itch.io</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <!-- Added image for Slash -->
+                    <div class="slideshow-container">
+                        <div class="slide fade" style="display: block;">
+                            <img src="images/Slash.png" alt="Slash Demo Screenshot" />
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h5>Slash: Soulslike Demo</h5>
+                        <p>Prototyped core combat mechanics inspired by Soulslike games, focusing on animation montages, hit detection, and simple enemy AI behavior, along with all basic tools provided by the engine. Project results of Stephen Ulibarri "Unreal Engine 5 C++ The Ultimate Game Developer Course" 58 hours course.</p>
+                        <div class="actions" style="margin-top: 1rem;">
+                            <a href="https://github.com/LienoPC/UE5-StartingCourse-SlashProject.git">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unity Projects -->
+            <h3 class="category-title"><i class="fa-brands fa-unity"></i> Unity</h3>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="slideshow-container">
+                        <div class="slide fade"><img src="images/Mecha_1.png" alt="Mecha-Ball 1" /></div>
+                        <div class="slide fade"><img src="images/Mecha_2.png" alt="Mecha-Ball 2" /></div>
+                        <div class="slide fade"><img src="images/Mecha_3.png" alt="Mecha-Ball 3" /></div>
+                        <a class="prev" onclick="moveSlide(this, -1)">&#10094;</a>
+                        <a class="next" onclick="moveSlide(this, 1)">&#10095;</a>
+                    </div>
+                    <div class="project-content">
+                        <h4>Project Mecha-Ball</h4>
+                        <p>Isometric puzzle game featuring a small robot. Help its AI train and become the best problem-solving system. Developed in a 6-person team as part of the "Game Design" course. Worked specifically on:</p>
+                        <ul>
+                            <li>Basic concept and design, Game design and level design</li>
+                            <li>High-level player logic, player controller and multiple control module system</li>
+                            <li>Player animation system, procedural animation and its interaction with physics</li>
+                            <li>Integration of FMOD Studio and audio engineering</li>
+                        </ul>
+                        <div class="actions">
+                            <a href="https://lienopc.itch.io/project-mecha-ball">Itch.io</a>
+                            <a href="https://www.youtube.com/watch?v=LLXxinfmF0Q">Showcase</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="slideshow-container">
+                        <div class="slide fade"><img src="images/TrueVision.png" alt="True Vision" /></div>
+                    </div>
+                    <div class="project-content">
+                        <h4>True Vision | GGJ 2026</h4>
+                        <p>Project developed during the 2026 Global Game Jam in a team of 5 people. Worked as programmer, specifically on:</p>
+                        <ul>
+                            <li>Attacks, hitbox and enemy-interaction mechanics</li>
+                            <li>Hook mechanic with interaction with walls and object dragging</li>
+                            <li>In-game buttons and plates with trigger logic associated</li>
+                            <li>Game architecture, audio system, level logic</li>
+                            <li>Base concept and demo level</li>
+                        </ul>
+                        <div class="actions">
+                            <a href="https://programmatore-unity.itch.io/true-vision">Itch.io</a>
+                            <a href="https://www.youtube.com/watch?v=tWzppYTZRHA">Trailer</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <!-- Added image for Plague in Milan -->
+                    <div class="slideshow-container">
+                        <div class="slide fade" style="display: block;">
+                            <img src="images/Plague.jpg" alt="Plague in Milan Screenshot" />
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h4>Plague in Milan</h4>
+                        <p>Project developed during the Virtual Reality course in a team of 4 people. First person, narrative, and educational game. Worked specifically on:</p>
+                        <ul>
+                            <li>AI of NPC with Behavior Trees</li>
+                            <li>Animation system and blend with Behavior Trees and NPCs AI</li>
+                            <li>Locomotion and dynamic animation blending of NPCs</li>
+                            <li>Global lifecycle and scene management</li>
+                        </ul>
+                        <div class="actions" style="margin-top: 1rem;">
+                            <a href="https://github.com/giulio-arecco/the-plague-in-milan">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- C++ & OpenGL -->
+            <h3 class="category-title"><i class="fa-solid fa-terminal"></i> C++ & OpenGL</h3>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="slideshow-container">
+                        <div class="slide fade"><img src="images/Dragon_forest.png" alt="Dragon Screenshot 1" /></div>
+                        <div class="slide fade"><img src="images/Dragon_mountain.png" alt="Dragon Screenshot 2" /></div>
+                        <a class="prev" onclick="moveSlide(this, -1)">&#10094;</a>
+                        <a class="next" onclick="moveSlide(this, 1)">&#10095;</a>
+                    </div>
+                    <div class="project-content">
+                        <h4>Dragòn Dragòn - 2D Scroller Game</h4>
+                        <p>Gained experience with C++ coding principles and data structures in the context of game development, while also working with OpenGL graphics library. Specifically, I worked on the design and implementation of:</p>
+                        <ul>
+                            <li>Main game loop system</li>
+                            <li>Graphics classes (sprite_renderer, shader, texture, post_processor)</li>
+                            <li>Post processing shaders</li>
+                            <li>Gameplay logic, data structures for increasing difficulty and levels</li>
+                        </ul>
+                        <div class="actions">
+                            <a href="https://github.com/LienoPC/Dragon--2D-Scroller-Game">GitHub</a>
+                            <a href="https://www.youtube.com/watch?v=oxvbj1901CQ">Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Projects & CG -->
+            <h3 class="category-title"><i class="fa-solid fa-microchip"></i> ML, Programming & Graphics</h3>
+            
+            <div class="simple-list">
+                <h4>🤖 Machine Learning/AI Projects</h4>
+                <ul>
+                    <li><strong>Manga Auto Colorization:</strong> CNN Model for automatic manga colorization.</li>
+                    <li><strong>Human and Object Detection for Security Systems:</strong> Prototype script using the YOLO detection system for Object and Human detection.</li>
+                </ul>
+            </div>
+
+            <div class="simple-list">
+                <h4>💻 Other Programming Projects</h4>
+                <ul>
+                    <li><strong>N-Body Cuda Simulation:</strong> CUDA Project for N-Body Gravitational System Simulation.</li>
+                    <li><strong>OS161 - Demand Paging System:</strong> OS161 Kernel extension: Demand Paging Memory System Implementation.</li>
+                    <li><strong>EZ-Electronics:</strong> Online store web application developed for Software Engineering exam.</li>
+                    <li><strong>Misfortune Game:</strong> A web application developed in React and JavaScript (frontend and backend).</li>
+                </ul>
+            </div>
+
+            <div class="project-grid">
+                <div class="project-card">
+                    <!-- Added image for The Postman -->
+                    <div class="slideshow-container">
+                        <div class="slide fade" style="display: block;">
+                            <img src="images/Postman.jpg" alt="The Postman Animation Screenshot" />
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h4>"The Postman" Animation Reproduction</h4>
+                        <p>CGI reproduction of "The Postman" ad spot, project for the “Computer Animation” exam at Politecnico di Torino. Created a 30-second 3D-animated video using Blender; worked specifically on:</p>
+                        <ul>
+                            <li>Modeling, rigging and animation of the dog</li>
+                            <li>Scene animation using modern keyframing and motion techniques</li>
+                            <li>Video sections on which I worked: 0:11-0:13; 0:18-0:23, 0:27-0:29 (fence)</li>
+                        </ul>
+                        <div class="actions">
+                            <a href="#">Watch on Google Drive</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="slideshow-container">
+                        <div class="slide fade"><img src="images/Dragon_Vertical.png" alt="Dragon Vertical" /></div>
+                        <div class="slide fade"><img src="images/Dragon_Horizontal.png" alt="Dragon Horizontal" /></div>
+                        <div class="slide fade"><img src="images/Dragon_Closeup.png" alt="Dragon Closeup" /></div>
+                        <a class="prev" onclick="moveSlide(this, -1)">&#10094;</a>
+                        <a class="next" onclick="moveSlide(this, 1)">&#10095;</a>
+                    </div>
+                    <div class="project-content">
+                        <h4>🆛 Dragòn - 3D Environment</h4>
+                        <p>CGI render of an original environment, part of the project for "Computer Graphics" exam at Politecnico di Torino. Applied both classical and modern modeling techniques, including fluid simulation, sculpting, soft and rigid bodies, dynamic painting etc.</p>
+                        <ul>
+                            <li>Censer modeling, material and rigidbody simulation for chains</li>
+                            <li>Lava simulation, Dragon tooth, Marble fence, Walls and floor</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 3: CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Me</h2>
+                <p>Interested in collaborating on a project, hiring me, or just want to chat about game development? Feel free to reach out using the form below!</p>
+            </div>
+            
+            <form method="post" action="#" class="contact-form">
+                <div class="input-group">
+                    <input type="text" name="name" id="name" placeholder="Your Name" required />
+                    <input type="email" name="email" id="email" placeholder="Your Email" required />
+                </div>
+                <div class="input-group">
+                    <input type="text" name="subject" id="subject" placeholder="Subject" />
+                </div>
+                <div class="input-group">
+                    <textarea name="message" id="message" placeholder="Message" rows="6" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Send Message</button>
+                    <button type="reset" class="btn-reset">Reset Form</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/alberto-cagnazzo-038202338" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/LienoPC" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:albertocag9@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p class="copyright">&copy; Alberto. All rights reserved. Designed for the Future.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts for Slideshows -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let slideshows = document.querySelectorAll('.slideshow-container');
+            slideshows.forEach(function(slideshow) {
+                // Only initialize full slideshow logic if there is more than 1 image
+                let slides = slideshow.querySelectorAll('.slide');
+                if (slides.length > 1) {
+                    slideshow.setAttribute('data-slide-index', '0');
+                    showSlides(slideshow, 0);
+                }
+            });
+        });
+
+        function moveSlide(btn, n) {
+            let slideshow = btn.closest('.slideshow-container');
+            let currentIndex = parseInt(slideshow.getAttribute('data-slide-index'));
+            showSlides(slideshow, currentIndex + n);
+        }
+
+        function showSlides(slideshow, n) {
+            let slides = slideshow.querySelectorAll('.slide');
+            let newIndex = n;
+            
+            if (n >= slides.length) { newIndex = 0; }
+            if (n < 0) { newIndex = slides.length - 1; }
+            
+            slides.forEach(slide => slide.style.display = "none");
+            
+            if(slides.length > 0) {
+                slides[newIndex].style.display = "block";
+                slideshow.setAttribute('data-slide-index', newIndex);
+            }
+        }
+    </script>
+</body>
 </html>
