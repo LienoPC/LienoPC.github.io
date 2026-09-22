@@ -198,10 +198,11 @@
         /* --- Competencies / Skills --- */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(6, 1fr);
             gap: 1.5rem;
             margin-top: 2rem;
             width: 100%;
+            justify-items: center; /* Centers the fixed-width cards */
         }
 
         .skill-card {
@@ -215,18 +216,38 @@
             font-weight: 600;
             font-size: 0.95rem;
             transition: var(--transition);
+            
+            /* Fixed width logic */
+            width: 100%;
+            max-width: 340px; 
+            box-sizing: border-box;
         }
 
+        /* The icon inside the card */
         .skill-card i {
             font-size: 1.5rem;
             color: var(--accent-cyan);
         }
 
+        /* The hover animation restored */
         .skill-card:hover {
             transform: translateY(-5px);
             border-color: var(--accent-cyan);
             box-shadow: var(--glow);
             background: var(--bg-card-hover);
+        }
+
+        /* First row: 2 cards spanning half the grid (3 columns each) */
+        .skill-card:nth-child(1), 
+        .skill-card:nth-child(2) {
+            grid-column: span 3;
+        }
+
+        /* Second row: 3 cards spanning a third of the grid (2 columns each) */
+        .skill-card:nth-child(3), 
+        .skill-card:nth-child(4), 
+        .skill-card:nth-child(5) {
+            grid-column: span 2;
         }
 
         /* --- Work Experience (Highlight) --- */
@@ -276,6 +297,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2.5rem;
+            margin-bottom: 4rem;
         }
 
         .project-card {
@@ -286,6 +308,11 @@
             display: flex;
             flex-direction: column;
             transition: var(--transition);
+            
+            /* --- New properties to limit width --- */
+            width: 100%;
+            max-width: 550px;
+            margin: 0 auto;
         }
 
         .project-card:hover {
@@ -503,6 +530,10 @@
             .hero-banner-container { height: 250px; }
             .nav-links { display: none; }
             .input-group { flex-direction: column; gap: 1.5rem; }
+            .skill-card:nth-child(n) {
+                grid-column: span 6;
+                max-width: 400px;
+            }
         }
     </style>
 </head>
@@ -536,15 +567,15 @@
                 <h1>Hi there,<br>I'm <span class="gradient-text">Alberto!</span></h1>
                 <p><strong>Game Developer & Software Engineer.</strong></p>
                 <p>This is my portfolio, simple as that. Mostly videogames projects with a bit of tech verticalities. What mainly interests me is to explore engineering techniques, patterns and optimization applied to games.</p>
-                <p>With a strong foundation in computer engineering, I've developed a diverse skill set ranging from low-level system programming to high-level game design and AI model integration.</p>
+                <p>Master's Degree from Politecnico di Torino, specialized in Graphics and Multimedia. With a strong foundation in computer engineering, I've developed a diverse skill set ranging from low-level system programming to high-level software architecture.</p>
             </div>
 
             <div class="skills-grid">
                 <div class="skill-card"><i class="fa-solid fa-gamepad"></i> Unreal Engine & Unity</div>
-                <div class="skill-card"><i class="fa-solid fa-code"></i> C++ (also C#, Python, JS)</div>
+                <div class="skill-card"><i class="fa-solid fa-code"></i> C++ Enthusiast (also C# and Python)</div>
                 <div class="skill-card"><i class="fa-solid fa-cube"></i> OpenGL & Graphics</div>
                 <div class="skill-card"><i class="fa-solid fa-robot"></i> Machine Learning & AI</div>
-                <div class="skill-card"><i class="fa-solid fa-video"></i> 3D Modeling (Blender)</div>
+                <div class="skill-card"><i class="fa-solid fa-video"></i> 3D Modeling & Animation </div>
             </div>
         </div>
     </section>
@@ -566,9 +597,9 @@
                     <p>Working on DigiPHY system, an adaptive mixed-reality seating buck in support of automotive design process. <a href="https://www.digiphy.eu">Digiphy Website</a></p>
                     <p>Gained expertise on:</p>
                     <ul>
-                        <li>Unreal Engine Framework extension and customization</li>
-                        <li>Engine/Editor-Programming level features for in-engine custom functionalities</li>
-                        <li>Engine and Editor level maps, lifetime, UObjects and Asset Management.</li>
+                        <li>Unreal Engine Framework extension and customization.</li>
+                        <li>Engine/Editor-Programming level features for in-engine custom functionalities.</li>
+                        <li>Game and Editor level maps, lifetime, UObjects and Asset Management.</li>
                         <li>Networking with custom server systems, collaboration and multiplayer.</li>
                     </ul>
                 </div>
@@ -577,10 +608,10 @@
                     <h4>C++ Programmer @ GRANSTUDIO</h4>
                     <p>Working also on extending custom OpenXR layer, as an API layer injected inside OpenXR stack during execution. Used for autoalignment. 
                     <ul>
-                        <li>All code follows C++ 26 Standard</li>
-                        <li>Real-time communication with external edpoints (Rest, Websocket)</li>
-                        <li>High-performance, multi-threaded algorithm for autoalignment</li>
-                        <li>C++ OOP with RAII pattern</li>
+                        <li>All code follows C++ 23/26 Standard.</li>
+                        <li>Real-time communication with external edpoints (Rest, Websockets).</li>
+                        <li>High-performance, multi-threaded algorithm for autoalignment.</li>
+                        <li>C++ OOP with RAII pattern and best practices.</li>
                     </ul>
                 </div>
             </div>
@@ -659,8 +690,7 @@
 
                 <div class="project-card">
                     <div class="slideshow-container">
-                        <div class="slide fade"><img src="images/TrueVision.png" alt="True Vision" /></div>
-                    </div>
+                        <div class="slide fade" style="display: block;"><img src="images/TrueVision.png" alt="True Vision" /></div>                    </div>
                     <div class="project-content">
                         <h4>True Vision | GGJ 2026</h4>
                         <p>Project developed during the 2026 Global Game Jam in a team of 5 people. Worked as programmer, specifically on:</p>
@@ -731,27 +761,48 @@
             <!-- Other Projects & CG -->
             <h3 class="category-title"><i class="fa-solid fa-microchip"></i> ML, Programming & Graphics</h3>
             
-            <div class="simple-list">
-                <h4>🤖 Machine Learning/AI Projects</h4>
-                <ul>
-                    <li><strong>Manga Auto Colorization:</strong> CNN Model for automatic manga colorization.</li>
-                    <li><strong>Human and Object Detection for Security Systems:</strong> Prototype script using the YOLO detection system for Object and Human detection.</li>
-                </ul>
-            </div>
-
-            <div class="simple-list">
-                <h4>💻 Other Programming Projects</h4>
-                <ul>
-                    <li><strong>N-Body Cuda Simulation:</strong> CUDA Project for N-Body Gravitational System Simulation.</li>
-                    <li><strong>OS161 - Demand Paging System:</strong> OS161 Kernel extension: Demand Paging Memory System Implementation.</li>
-                    <li><strong>EZ-Electronics:</strong> Online store web application developed for Software Engineering exam.</li>
-                    <li><strong>Misfortune Game:</strong> A web application developed in React and JavaScript (frontend and backend).</li>
-                </ul>
-            </div>
-
-            <div class="project-grid">
+             <div class="project-grid">
                 <div class="project-card">
-                    <!-- Added image for The Postman -->
+                    <div class="slideshow-container">
+                        <div class="slide fade" style="display: block;">
+                            <img src="images/NBodySimulation.jpg" alt="N-Body Cuda Simulation" />
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h4>N-Body Cuda Simulation</h4>
+                        <p>Project that implements a GPU-accelerated simulation of an N-body system utilizing the all-pairs approach. The application computes gravitational interactions using NVIDIA CUDA, supplemented by real-time visualization and performance benchmarking.</p>
+                        <ul>
+                            <li>Parametric tiling with Shared Memory that decouples tile width from thread block size.</li>
+                            <li>Multi-threaded OpenMP reference implementation providing lockstep verification and adaptive tolerance analysis for floating-point calculations.</li>
+                            <li>Runtime GPU profiling and optimization based on parallel programming techniques.</li>
+                        </ul>
+                        <div class="actions">
+                            <a href="https://github.com/LienoPC/N-BodySimulation">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="project-card">
+                    <div class="slideshow-container">
+                        <div class="slide fade" style="display: block;">
+                            <img src="images/OS161.jpg" alt="OS1616 Demand Paging" />
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h4>OS/161 Demand Paging</h4>
+                        <p>OS161 Kernel extension: Demand Paging Memory System Implementation.</p>
+                        <ul>
+                            <li>Low-level C project with explicit kernel memory management.</li>
+                            <li>Demand paging with per-process page tables.</li>
+                            <li>Swap space management.</li>
+                            <li>Dynamic ELF loading and TLB handling.</li>
+                        </ul>
+                        <div class="actions">
+                            <a href="https://github.com/LienoPC/OS161-DemandPaging">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
                     <div class="slideshow-container">
                         <div class="slide fade" style="display: block;">
                             <img src="images/Postman.jpg" alt="The Postman Animation Screenshot" />
@@ -789,6 +840,22 @@
                     </div>
                 </div>
             </div>
+            <div class="simple-list">
+                <h4>🤖 Machine Learning/AI Projects</h4>
+                <ul>
+                    <li><strong>Manga Auto Colorization:</strong> CNN Model for automatic manga colorization.</li>
+                    <li><strong>Human and Object Detection for Security Systems:</strong> Prototype script using the YOLO detection system for Object and Human detection.</li>
+                </ul>
+            </div>
+
+            <div class="simple-list">
+                <h4>💻 Other Programming Projects</h4>
+                <ul>
+                    <li><strong>EZ-Electronics:</strong> Online store web application developed for Software Engineering exam.</li>
+                    <li><strong>Misfortune Game:</strong> A web application developed in React and JavaScript (frontend and backend).</li>
+                </ul>
+            </div>
+
 
         </div>
     </section>
